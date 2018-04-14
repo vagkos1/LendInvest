@@ -1,0 +1,26 @@
+{
+  "name": "LendInvest",
+  "authors": [
+    {
+      "name": "Evangelos Kostopoulos",
+      "email": "kostopoulos.e@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0",
+    "pds/skeleton": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LendInvest\\":"src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LendInvest\\Tests\\": "tests/"
+    }
+  }
+}
