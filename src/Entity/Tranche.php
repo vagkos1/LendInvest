@@ -64,13 +64,12 @@ class Tranche
         return $this->maxAvailable;
     }
 
-    public function getDailySimpleInterestRate() : float
+    public function getDailySimpleInterestRate(\DateTime $dateTime) : float
     {
-        // depends on the month, let's hardcode 31 for October
-        return round($this->interest / 31, 6);
+        // calculate how many days a particular month in a specific year had.
+        $days = cal_days_in_month(CAL_GREGORIAN, $dateTime->format('m'), $dateTime->format('Y'));
 
-        // for compoundDailyInterestRate we could probably do something like this:
-//        return round(((pow((1 + $this->interest / 100), 1 / 31) - 1) * 100), 6);
+        return round($this->interest / $days, 6);
     }
 
     // lets assume all investments in GBP here

@@ -118,7 +118,7 @@ class Investment
     {
         $this->assertCanGetEarningsInRunningMonth($endDate);
 
-        return round(($this->amount->getAmount() * $this->getTranche()->getDailySimpleInterestRate()/100 * $this->getDaysInTheRunningMonth($endDate)), 2);
+        return round(($this->amount->getAmount() * $this->getTranche()->getDailySimpleInterestRate($endDate)/100 * $this->getDaysInTheRunningMonth($endDate)), 2);
     }
 
     /**
